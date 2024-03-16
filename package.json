@@ -1,9 +1,13 @@
 {
-  "name": "react-lite-player",
+  "name": "r-lite-player",
   "version": "1.0.0",
   "description": "A react component library",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DjibrilM/React-Lite-Player"
+  },
   "files": [
     "dist"
   ],
