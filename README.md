@@ -55,5 +55,4 @@ function App() {
 | videoProgressBackground | Video progress background | #ffff |
 | autoPlay | Play the video immediately after loading | False |
 | playerProgressBarContainer | Progress bar container | #9d9d9d34 |
-# React-Lite-Player
-# React-Lite-Player
+
