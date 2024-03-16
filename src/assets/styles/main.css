@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Mono+One&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.player {
+  position: relative;
+  background: #333;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+.player video {
+  width: 100%; /* Set video width to fill container */
+  height: auto; /* Let the height adjust automatically to maintain aspect ratio */
+  display: block;
+}
+
+.player video::cue {
+  opacity: 0;
+}
+
+.player video::-webkit-media-text-track-container {
+  overflow: visible !important;
+  transform: translateY(30%) !important;
+}
+
+.player .poster-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  bottom: 0;
+  z-index: 1;
+}
+
+.player.touched .poster-img {
+  display: none;
+}
+
+.controls-container {
+  background-color: #00000044;
+  position: absolute;
+  bottom: 0px;
+  height: 65px;
+  left: 0;
+  right: 0;
+  transition: 0.3s ease-in-out;
+  z-index: 11;
+  opacity: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.controls-container .controls {
+  padding-inline: 20px;
+  display: flex;
+  padding-top: 10px;
+  align-items: center;
+}
+
+.player:hover .controls-container,
+.player.paused .controls-container,
+.player.in-picture-mode .controls-container {
+  opacity: 1;
+}
+
+.play-pause-next-previous-container {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.controls-container .controls button {
+  background: none;
+  appearance: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.847);
+  cursor: pointer;
+  width: max-content;
+  outline: none;
+}
+
+.controls-container .controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.play {
+  display: none;
+}
+.pause {
+  display: none;
+}
+
+.player:not(.paused) .pause {
+  display: block;
+}
+
+.player.paused .play {
+  display: block;
+}
+
+.controls-container .controls button svg {
+  width: 1.6rem;
+}
+
+.controls-container .controls button:hover {
+  color: white;
+}
+
+/* //loaging spinner */
+.loading-spiner-container {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  border-radius: 100%;
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-error-message {
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.video-error-message svg {
+  width: 100px;
+  color: #a2a2a2;
+}
+
+.custom-error-message-component {
+  position: absolute;
+}
+
+.centered-conrols {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 8;
+  position: absolute;
+  transition: 0.2s ease-in-out;
+  opacity: 0;
+  transition-delay: 2s;
+  pointer-events: none;
+}
+
+.centered-conrols button {
+  cursor: pointer;
+}
+
+.centered-conrols .centered-previous-btn,
+.centered-conrols .centered-next-btn {
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: 100%;
+  background-color: #00000053;
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+.centered-conrols .centered-previous-btn svg,
+.centered-conrols .centered-next-btn svg {
+  width: 20px;
+}
+
+.centered-conrols .centered-previous-btn:active,
+.centered-conrols .centered-next-btn:active {
+  transform: scale(0.9);
+}
+
+.player-button {
+  outline: none;
+  width: 100px;
+  height: 100px;
+  background-color: #00000053;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-appearance: none;
+  border: none;
+  cursor: pointer;
+}
+
+.player-button svg {
+  width: 70px;
+  color: #ffff;
+}
+
+.centered-play {
+  display: none;
+}
+
+.centered-pause {
+  display: none;
+  width: 100px;
+}
+
+.player.paused .centered-play {
+  display: block;
+}
+
+.player:not(.paused) .centered-pause {
+  display: block;
+}
+
+.player.paused .centered-conrols,
+.player.in-picture-mode .centered-conrols {
+  opacity: 1;
+  transition-delay: 0s;
+  pointer-events: all;
+}
+
+.player.in-picture-mode .player-button {
+  background-color: #ffffff20;
+}
+
+.cutom-track-element {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  margin-inline: 10px;
+  transition: 0.2s ease-in-out;
+  display: none;
+  pointer-events: none;
+  display: none;
+}
+
+.player.captions .cutom-track-element {
+  display: block;
+}
+
+.player:hover .cutom-track-element,
+.player.paused .cutom-track-element {
+  bottom: 66px;
+  max-width: max-content;
+}
+
+.player .cutom-track-element p {
+  background-color: #000000a3;
+  color: white;
+  padding: 10px;
+  font-size: 19px;
+}
+
+/* media queries */
+@media (max-width: 800px) {
+  .controls-container {
+    height: 50px;
+  }
+
+  .controls-container .controls {
+    padding-inline: 0px;
+    position: relative;
+  }
+
+  .player-button {
+    width: 75px;
+    height: 75px;
+  }
+
+  .player-button svg {
+    width: 50px;
+    color: #ffff;
+  }
+
+  .video-error-message {
+    max-height: max-content;
+  }
+
+  .video-error-message svg {
+    width: 50px;
+  }
+
+  .player:hover .cutom-track-element,
+  .player.paused .cutom-track-element {
+    bottom: 40px;
+    max-width: max-content;
+  }
+
+  .player .cutom-track-element p {
+    font-size: 16px;
+  }
+
+  .centered-conrols .centered-previous-btn,
+  .centered-conrols .centered-next-btn {
+    display: flex;
+  }
+
+  .control-next-button {
+    display: none;
+  }
+
+  .controls-container .controls button.play svg {
+    width: 20px;
+  }
+
+  .controls-container .controls button.pause svg {
+    width: 20px;
+  }
+}

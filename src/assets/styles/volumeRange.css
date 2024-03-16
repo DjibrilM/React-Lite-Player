@@ -1,0 +1,128 @@
+.volume-control-container {
+  display: flex;
+  gap: 10px;
+}
+
+.volume-control {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.volume-button {
+  width: max-content;
+  -webkit-appearance: none;
+  padding: 5px;
+}
+
+.volume-control svg {
+  color: white;
+  font-size: 18px;
+}
+
+.volume-control .muted-volume-icon,
+.volume-control .medium-volume-icon,
+.volume-control .high-volume-icon {
+  display: none;
+  cursor: pointer;
+  color: white;
+}
+
+.player[data-volume-level="muted-volume"] .muted-volume-icon {
+  display: block;
+}
+
+.player[data-volume-level="low-volume"] .medium-volume-icon {
+  display: block;
+}
+
+.player[data-volume-level="high-volume"] .high-volume-icon {
+  display: block;
+}
+
+.volume-range-container {
+  width: 0px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.1s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.volume-control .volume-range-container input {
+  width: 100%;
+  -webkit-appearance: none;
+  height: 5px;
+  margin-left: 10px;
+  outline: none;
+  border-radius: 100px;
+  background-color: #ffffff55;
+  z-index: 3;
+  position: relative;
+  cursor: pointer;
+}
+
+.volume-control input::-webkit-slider-thumb {
+  background-color: white;
+  appearance: none;
+  height: 10px;
+  width: 10px;
+  border-radius: 100px;
+  outline: none;
+  border: none;
+}
+
+.volume-control input::-moz-range-thumb {
+  -webkit-appearance: none;
+  background-color: white;
+  appearance: none;
+  height: 10px;
+  width: 10px;
+  border-radius: 100px;
+  outline: none;
+  border: none;
+}
+
+.range-value-track {
+  position: absolute;
+  left: 1px;
+  right: 0;
+  background-color: white;
+  height: 5px;
+  margin-left: 3px;
+  z-index: 1;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transition: 0s !important;
+  visibility: hidden;
+}
+
+.volume-control:hover .volume-range-container,
+.volume-control:hover .volume-range-container input {
+  width: 100px;
+  transform: scaleX(1);
+}
+
+.volume-control:hover .range-value-track {
+  transform: scaleX(1);
+  visibility: visible;
+}
+
+.time-track {
+  color: white;
+  font-size: 13px;
+  display: flex;
+  transition: 0.4s ease-in-out;
+  align-items: center;
+  gap: 2px;
+}
+
+@media (max-width: 800px) {
+  .volume-control:hover .volume-range-container,
+  .volume-control:hover .volume-range-container input {
+    width: 70px;
+    transform: scaleX(1);
+  }
+}

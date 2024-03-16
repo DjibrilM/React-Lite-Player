@@ -1,0 +1,72 @@
+.player-progress-bar-container {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  height: 3px;
+  justify-content: start;
+  align-items: center;
+  background: #9d9d9d34;
+}
+
+.player-progress-bar-container input {
+  width: 101%;
+  height: 100%;
+  background-color: transparent;
+  -webkit-appearance: none;
+  z-index: 4;
+  cursor: pointer;
+  z-index: 4;
+  outline: none;
+}
+
+.player-progress-bar-container input:disabled {
+  cursor: not-allowed;
+}
+
+.player-progress-bar-container input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  visibility: hidden;
+  background-color: none;
+}
+
+.player-progress-bar-container input[type="range"]::-moz-range-thumb {
+  visibility: hidden;
+}
+
+.player-progress-value-indicator {
+  width: 0;
+  min-width: 10px;
+  height: 100%;
+  background: white;
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.custom-thumb {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 100px;
+  position: relative;
+  right: -1px;
+}
+
+.player-progress-bar-container:hover,
+.player.paused .player-progress-bar-container {
+  height: 5px;
+}
+
+.loaded-buffer-indicator {
+  width: 0;
+  height: 100%;
+  background-color: rgba(233, 230, 230, 0.237);
+  position: absolute;
+  z-index: 1;
+}
