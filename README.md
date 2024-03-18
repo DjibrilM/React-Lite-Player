@@ -13,7 +13,7 @@ npm i react-lite-player
 #### usage
 
 ```tsx
-import { Video } from "react-lite-player";
+import { Video } from "r-lite-player";
 
 function App() {
   return (
