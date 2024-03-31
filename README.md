@@ -30,31 +30,32 @@ function App() {
 
 ##### Props
 
-| prop                        | Description                                              | Default               |
-| --------------------------- | -------------------------------------------------------- | --------------------- |
-| url                         | Your video URL                                           | No default.           |
-| subtitleUrl                 | Your subtitle file's URL                                 | No default.           |
-| subtitleLanguage            | Subtitle language                                        | English               |
-| subtitleColor               | Subtitle text color                                      | #ffff                 |
-| poster                      | Poster image URL                                         | No default.           |
-| enableNextButton            | Show next and previous buttons                           | False                 |
-| onPlay                      | Event triggered upon the commencement of playback        |                       |
-| onPause                     | Event triggered when the video pauses                    | No default.           |
-| next                        | Function called when pressing the next button            | Undefined             |
-| previous                    | Function called when pressing the previous button        | Undefined             |
-| width                       | Video width                                              | 100%                  |
-| height                      | Video height                                             | Auto                  |
-| wrapperBackground           | Video container background                               | #333                  |
-| errorMessage                | Error message displayed when an error occurs             | Something went wrong. |
-| customErrorMessageComponent | Custom error component; having one overrides the default | Null                  |
-| loop                        | Allow video to play in a loop                            | False                 |
-| hideVideoWhenError          | Hide the video when an error occurs                      | True (recommended)    |
-| crossOrigin                 | Video cross-origin property                              | Anonymous             |
-| subtitleBackground          | Subtitle background                                      | #000000a3             |
-| bufferedIndicatorBackground | Background of the loaded-buffer progress                 | Undefined             |
-| videoProgressBackground     | Video progress background                                | #ffff                 |
-| autoPlay                    | Play the video immediately after loading                 | False                 |
-| playerProgressBarContainer  | Progress bar container                                   | #9d9d9d34             |
+| prop                        | Description                                                                                                                                                                                                               | Default               |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| url                         | Your video URL                                                                                                                                                                                                            | No default.           |
+| subtitleUrl                 | Your subtitle file's URL                                                                                                                                                                                                  | No default.           |
+| subtitleLanguage            | Subtitle language                                                                                                                                                                                                         | English               |
+| subtitleColor               | Subtitle text color                                                                                                                                                                                                       | #ffff                 |
+| poster                      | Poster image URL                                                                                                                                                                                                          | No default.           |
+| enableNextButton            | Show next and previous buttons                                                                                                                                                                                            | False                 |
+| onPlay                      | Event triggered upon the commencement of playback                                                                                                                                                                         |                       |
+| onPause                     | Event triggered when the video pauses                                                                                                                                                                                     | No default.           |
+| next                        | Function called when pressing the next button                                                                                                                                                                             | Undefined             |
+| previous                    | Function called when pressing the previous button                                                                                                                                                                         | Undefined             |
+| width                       | Video width                                                                                                                                                                                                               | 100%                  |
+| height                      | Video height                                                                                                                                                                                                              | Auto                  |
+| wrapperBackground           | Video container background                                                                                                                                                                                                | #333                  |
+| errorMessage                | Error message displayed when an error occurs                                                                                                                                                                              | Something went wrong. |
+| customErrorMessageComponent | Custom error component; having one overrides the default                                                                                                                                                                  | Null                  |
+| loop                        | Allow video to play in a loop                                                                                                                                                                                             | False                 |
+| hideVideoWhenError          | Hide the video when an error occurs                                                                                                                                                                                       | True (recommended)    |
+| crossOrigin                 | Video cross-origin property                                                                                                                                                                                               | Anonymous             |
+| subtitleBackground          | Subtitle background                                                                                                                                                                                                       | #000000a3             |
+| bufferedIndicatorBackground | Background of the loaded-buffer progress                                                                                                                                                                                  | Undefined             |
+| videoProgressBackground     | Video progress background                                                                                                                                                                                                 | #ffff                 |
+| autoPlay                    | Play the video immediately after loading                                                                                                                                                                                  | False                 |
+| playerProgressBarContainer  | Progress bar container                                                                                                                                                                                                    | #9d9d9d34             |
+| customControlsArea          | his area is reserved for any elements you may want to add to the bottom-left side of the controllers, such as a subtitles drop-down or settings drop-down for the player. Just anything you may want to add to the player | null                  |
 
 **Video Ref**
 
@@ -93,3 +94,5 @@ function App() {
 
 export default App;
 ```
+
+If you find this library useful consider linking it on GitHub, or maybe why not contribute to it 😌😌
