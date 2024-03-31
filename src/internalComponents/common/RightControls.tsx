@@ -1,7 +1,8 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Visible from "./Visible";
 
 interface Props {
+  customeControlArea?: React.JSX.Element;
   disableCaption: boolean;
   toggleCaptions: () => void;
   error: boolean;
@@ -21,22 +22,61 @@ const RightControls: React.FC<Props> = ({
   changePlaybackRate,
   toggleCaptions,
   disableCaption,
+  customeControlArea,
 }) => {
   const playbackspeedList = useRef<number[]>([0.25, 0.5, 1, 1.5, 1.75, 2]);
+  const playbackspeedDropdown = useRef<HTMLButtonElement>(null);
+  const [showPlaybackDropdown, setshowPlaybackDropdown] =
+    useState<boolean>(false);
+
+  useEffect(() => {
+    if (showPlaybackDropdown) {
+      showDropdown();
+    } else {
+      hideDropdown();
+    }
+  }, [showPlaybackDropdown]);
+
+  const showDropdown = () => {
+    if (playbackspeedDropdown.current) {
+      playbackspeedDropdown.current.style.opacity = "1";
+      playbackspeedDropdown.current.style.marginTop = "0px";
+      playbackspeedDropdown.current.style.transitionDelay = "0s";
+      playbackspeedDropdown.current.style.pointerEvents = "all";
+      playbackspeedDropdown.current.focus();
+    }
+  };
+
+  const hideDropdown = () => {
+    if (playbackspeedDropdown.current) {
+      playbackspeedDropdown.current.style.opacity = "0";
+      playbackspeedDropdown.current.style.pointerEvents = "none";
+      playbackspeedDropdown.current.style.marginTop = "10px";
+    }
+  };
 
   return (
     <div className="right-controls">
-      <div className="playback-speed">
-        <p className="selected">{playbackSpeed}x</p>
+      <div className="cutom-controls-area">{customeControlArea}</div>
 
-        <div className="playback-speed-dropdown">
+      <div className="playback-speed">
+        <p className="selected" onClick={() => setshowPlaybackDropdown(true)}>
+          {playbackSpeed}x
+        </p>
+
+        <button
+          onBlur={() => setshowPlaybackDropdown(false)}
+          style={{ background: "#000000c1" }}
+          className="playback-speed-dropdown"
+          ref={playbackspeedDropdown}
+        >
           <div className="title">
             <p>Playback speed</p>
           </div>
 
-          {playbackspeedList.current.map((speed,index) => (
+          {playbackspeedList.current.map((speed, index) => (
             <div
-            key={`right-control-speed-option-${index}`}
+              key={`right-control-speed-option-${index}`}
               onClick={() => changePlaybackRate(speed)}
               className={playbackSpeed === speed ? "active" : ""}
             >
@@ -54,7 +94,7 @@ const RightControls: React.FC<Props> = ({
               <span>{speed === 1 ? "Normal" : speed}</span>
             </div>
           ))}
-        </div>
+        </button>
       </div>
 
       <Visible visible={!disableCaption}>
@@ -97,7 +137,7 @@ const RightControls: React.FC<Props> = ({
         </svg>
       </button>
 
-      <button  onClick={enterFullscreem}>
+      <button onClick={enterFullscreem}>
         <svg
           className="fullscreen-open-svg"
           stroke="currentColor"

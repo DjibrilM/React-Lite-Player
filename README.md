@@ -1,8 +1,10 @@
 <h1>React Lite Player</h1>
 
- <center>
 ReactLitePlayer player is a minimalistic video player aimed to offer simple usage with the least of features you need for your project, while making everything simple the library offers customization and call-back functions that you may want.
-</center>
+
+
+![React lite player diagram](https://res.cloudinary.com/dgbujfxvt/image/upload/v1711920639/Frame_2_y2kwcy.png)
+
 
 <h4>installation</h4>
 
@@ -20,8 +22,8 @@ function App() {
     <>
       <Video
         width={1000}
-        url="https://res.cloudinary.com/dgbujfxvt/video/upload/v1709235498/Video_wdv92e.mp4"
-        subtitleUrl="https://res.cloudinary.com/dgbujfxvt/raw/upload/v1709235088/subtitles_jmzkze.vtt" //optionl
+        url="your video url"
+        subtitleUrl="your subti url" //optionl
       />
     </>
   );
