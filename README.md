@@ -3,7 +3,8 @@
 ReactLitePlayer player is a minimalistic video player aimed to offer simple usage with the least of features you need for your project, while making everything simple the library offers customization and call-back functions that you may want.
 
 
-![React lite player diagram](https://res.cloudinary.com/dgbujfxvt/image/upload/v1711920639/Frame_2_y2kwcy.png)
+![Frame 2 (2)](https://github.com/DjibrilM/React-Lite-Player/assets/82331014/53b8c35f-b3d1-4df7-b5fa-82a25e3b08bb)
+
 
 
 <h4>installation</h4>
