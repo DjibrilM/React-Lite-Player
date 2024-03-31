@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Visible from "./Visible";
 
 interface Props {
-  customeControlArea?: React.JSX.Element;
+  customControlArea?: React.JSX.Element;
   disableCaption: boolean;
   toggleCaptions: () => void;
   error: boolean;
@@ -22,7 +22,7 @@ const RightControls: React.FC<Props> = ({
   changePlaybackRate,
   toggleCaptions,
   disableCaption,
-  customeControlArea,
+  customControlArea,
 }) => {
   const playbackspeedList = useRef<number[]>([0.25, 0.5, 1, 1.5, 1.75, 2]);
   const playbackspeedDropdown = useRef<HTMLButtonElement>(null);
@@ -57,7 +57,7 @@ const RightControls: React.FC<Props> = ({
 
   return (
     <div className="right-controls">
-      <div className="cutom-controls-area">{customeControlArea}</div>
+      <div className="cutom-controls-area">{customControlArea}</div>
 
       <div className="playback-speed">
         <p className="selected" onClick={() => setshowPlaybackDropdown(true)}>

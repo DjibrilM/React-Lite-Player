@@ -31,7 +31,7 @@ export type VideoProps = {
   playerProgressBarContainer?: string;
   videoProgressBckground?: string;
   autoPlay?: boolean;
-  customeControlsArea?: React.JSX.Element;
+  customControlsArea?: React.JSX.Element;
 };
 
 export type PlayerState = {
@@ -51,5 +51,4 @@ export interface ForwardedRef {
   toggleMute: () => void;
   video: HTMLVideoElement;
   toggleFullscreen:()=> void
-  
 }

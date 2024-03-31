@@ -1,6 +1,6 @@
 import React, { useRef, LegacyRef } from "react";
 import { Video } from "..";
-import useVideoRef from "../util/hooks/useForwardVideo";
+import useVideoRef from "../util/hooks/useVideoRef";
 
 export default {
   title: "Video",

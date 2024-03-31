@@ -49,7 +49,7 @@ const Video = forwardRef<ForwardedRef, VideoProps>(
       bufferedIndicatorBackground,
       videoProgressBckground,
       autoPlay,
-      customeControlsArea,
+      customControlsArea,
     },
     ref
   ) => {
@@ -406,7 +406,7 @@ const Video = forwardRef<ForwardedRef, VideoProps>(
             />
 
             <RightControls
-              customeControlArea={customeControlsArea}
+              customControlArea={customControlsArea}
               disableCaption={!subtitleUrl}
               toggleCaptions={toggleCaptions}
               error={error}
