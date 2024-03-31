@@ -55,3 +55,41 @@ function App() {
 | videoProgressBackground     | Video progress background                                | #ffff                 |
 | autoPlay                    | Play the video immediately after loading                 | False                 |
 | playerProgressBarContainer  | Progress bar container                                   | #9d9d9d34             |
+
+**Video Ref**
+
+To allow full customization and control over the video, the video forwards its ref and some methods that you can access using the `useVideoRef` hook those methods are
+
+| Method            | Use case                             |
+| ----------------- | ------------------------------------ |
+| togglePlay        | play and pause the video             |
+| toggleCaptions    | show and hide the subtitle component |
+| togglePictureMode | toggle picture mode                  |
+| toggleMute        | Mute or unmute the video             |
+| toggleFullscreen  | enter and exit full screen           |
+
+The video can also but accessed from the ref but calling `ref.current.video`(the name ref depends on how you name your variable)
+
+**Example use case**
+
+```ts
+import { Video, useVideoRef } from "react-lite-player";
+
+function App() {
+  const video = useVideoRef();
+
+  function togglePlay() {
+    video.current?.togglePlay();
+  }
+
+  return (
+    <div>
+      <button onClick={togglePlay}>toggle play</button>{" "}
+      {/*//control the player from your component directly using the forwarded ref */}
+      <Video ref={video} url={"url"} />
+    </div>
+  );
+}
+
+export default App;
+```
