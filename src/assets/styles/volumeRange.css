@@ -9,10 +9,13 @@
   align-items: center;
 }
 
-.volume-button {
-  width: max-content;
-  -webkit-appearance: none;
-  padding: 5px;
+.volume-control-container:hover .volume-button {
+  background-color: #3d63dd;
+}
+
+.range-value-track {
+  display: flex;
+  align-items: center;
 }
 
 .volume-control svg {
@@ -41,12 +44,13 @@
 }
 
 .volume-range-container {
+  opacity: 0;
   width: 0px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.1s ease;
+  transition: 0.3s ease;
   transform: scaleX(0);
   transform-origin: left;
 }
@@ -72,11 +76,13 @@
   border-radius: 100px;
   outline: none;
   border: none;
+  position: relative;
+  background-color: #3d63dd;
+  border: 2px solid white;
 }
 
 .volume-control input::-moz-range-thumb {
   -webkit-appearance: none;
-  background-color: white;
   appearance: none;
   height: 10px;
   width: 10px;
@@ -103,6 +109,7 @@
 .volume-control:hover .volume-range-container input {
   width: 100px;
   transform: scaleX(1);
+  opacity: 1;
 }
 
 .volume-control:hover .range-value-track {

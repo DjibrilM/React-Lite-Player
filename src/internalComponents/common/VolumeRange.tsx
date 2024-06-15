@@ -87,7 +87,9 @@ const VolumeRange: React.FC<Props> = ({
                 rangeLocalValue > 0 ? `${rangeLocalValue * 100 - 0.3}%` : 0,
             }}
             className="range-value-track"
-          ></div>
+          >
+          </div>
+
           <input
             defaultValue={rangeLocalValue}
             ref={rangeRef}
@@ -98,8 +100,6 @@ const VolumeRange: React.FC<Props> = ({
             max={1}
             step={0.1}
             type="range"
-            name=""
-            id=""
           />
         </div>
       </div>

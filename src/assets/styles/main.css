@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Mono+One&display=swap");
 
-
 .player {
   position: relative;
   background: #333;
@@ -73,7 +72,7 @@
 
 .play-pause-next-previous-container {
   display: flex;
-  gap: 5px;
+  gap: 0px;
   align-items: center;
 }
 
@@ -83,8 +82,18 @@
   border: none;
   color: rgba(255, 255, 255, 0.847);
   cursor: pointer;
-  width: max-content;
+  width: 35px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
   outline: none;
+  transition: 0.3s;
+}
+
+.controls-container .controls button:hover {
+  background: #3d63dd;
 }
 
 .controls-container .controls button:disabled {
@@ -92,23 +101,24 @@
   opacity: 0.6;
 }
 
-.play {
-  display: none;
-}
-.pause {
+.controls-container .controls button.play {
   display: none;
 }
 
-.player:not(.paused) .pause {
+.controls-container .controls button.pause {
+  display: none;
+}
+
+.player:not(.paused) .controls-container .controls button.pause.pause {
   display: block;
 }
 
-.player.paused .play {
+.player.paused .controls-container .controls button.play {
   display: block;
 }
 
 .controls-container .controls button svg {
-  width: 1.6rem;
+  width: 1.3rem;
 }
 
 .controls-container .controls button:hover {
@@ -188,8 +198,8 @@
 
 .player-button {
   outline: none;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   background-color: #00000053;
   border-radius: 50%;
   display: flex;
@@ -201,7 +211,7 @@
 }
 
 .player-button svg {
-  width: 70px;
+  width: 40px;
   color: #ffff;
 }
 
@@ -211,7 +221,8 @@
 
 .centered-pause {
   display: none;
-  width: 100px;
+  width: 40px;
+  font-size: 10px;
 }
 
 .player.paused .centered-play {
@@ -273,12 +284,16 @@
   }
 
   .player-button {
-    width: 75px;
-    height: 75px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .centered-pause {
+    font-size: 5px;
   }
 
   .player-button svg {
-    width: 50px;
+    width: 20px;
     color: #ffff;
   }
 
@@ -309,8 +324,24 @@
     display: none;
   }
 
+  .controls-container .controls button {
+    width: none;
+    height: none;
+  }
+
+  .controls-container .controls button:hover {
+    background: none;
+  }
+
   .controls-container .controls button.play svg {
     width: 20px;
+  }
+
+  .centered-conrols .centered-previous-btn,
+  .centered-conrols .centered-next-btn {
+    width: 30px;
+    height: 30px;
+  
   }
 
   .controls-container .controls button.pause svg {

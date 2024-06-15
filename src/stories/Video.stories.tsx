@@ -23,9 +23,6 @@ export const VideoStory = () => {
         loop
         corssOrigin="anonymous"
         enableNextButton={true}
-        bufferedIndicatorBackground="green"
-        playerProgressBarContainer="red"
-        videoProgressBckground="yellow"
       />
     </>
   );
