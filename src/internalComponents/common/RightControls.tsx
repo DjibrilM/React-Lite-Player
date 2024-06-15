@@ -60,20 +60,22 @@ const RightControls: React.FC<Props> = ({
       <div className="cutom-controls-area">{customControlArea}</div>
 
       <div className="playback-speed">
-        <p className="selected" onClick={() => setshowPlaybackDropdown(true)}>
+        <p
+          className="selected"
+          onClick={() => setshowPlaybackDropdown(true)}
+        >
           {playbackSpeed}x
         </p>
 
         <button
           onBlur={() => setshowPlaybackDropdown(false)}
-          style={{ background: "#000000c1" }}
+          style={{
+            background: "#ffff",
+            height: 50,
+          }}
           className="playback-speed-dropdown"
           ref={playbackspeedDropdown}
         >
-          <div className="title">
-            <p>Playback speed</p>
-          </div>
-
           {playbackspeedList.current.map((speed, index) => (
             <div
               key={`right-control-speed-option-${index}`}

@@ -3,6 +3,7 @@
   flex: 1;
   display: flex;
   justify-content: end;
+  align-items: center;
   gap: 10px;
   position: absolute;
   right: 0;
@@ -50,29 +51,44 @@
   width: 50px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .playback-speed .selected {
   color: white;
+  position: absolute;
+  height: 30px;
+  padding: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  border-radius: 10px;
+}
+
+.playback-speed .selected:hover {
+  background-color: #3d63dd;
 }
 
 .playback-speed-dropdown {
+  box-shadow: 0px -2px 22px -3px rgba(0, 0, 0, 0.39);
+  -webkit-box-shadow: 0px -2px 22px -3px rgba(0, 0, 0, 0.39);
+  -moz-box-shadow: 0px -2px 22px -3px rgba(0, 0, 0, 0.39);
   z-index: 60;
-  min-width: 220px;
-  margin-top: 10px;
+  min-width: 300px;
   border-radius: 10px;
   position: absolute;
   overflow: scroll;
-  top: -250px;
+  top: -50px;
   overflow: hidden;
-  left: -210px;
+  left: -300px;
   opacity: 0;
   transition: 0.2s ease-in-out;
   pointer-events: none;
   transition-delay: 0.3s;
   outline: none;
   border: none;
-  padding: 0px;
+  padding: 3px;
 }
 
 .player.player.fullscreen-open .playback-speed-dropdown,
@@ -80,36 +96,17 @@
   display: none;
 }
 
-/* .playback-speed:hover .playback-speed-dropdown {
-  opacity: 1;
-  margin-top: 0px;
-  transition-delay: 0s;
-  pointer-events: all;
-} */
-
-.playback-speed-dropdown .title {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.133);
-  padding: 5px;
-  padding-inline: 10px;
-  padding-bottom: 10px;
-  font-size: 14px;
-  color: rgb(222, 220, 220);
-  position: sticky;
-  top: 0px;
-}
-
-.playback-speed-dropdown .title:hover {
-  background-color: transparent;
-}
-
 .playback-speed-dropdown div {
   padding: 10px;
-  color: white;
   cursor: pointer;
   margin-top: 2px;
   display: flex;
   font-size: 12px;
+  color: black;
   gap: 10px;
+  border-radius: 20px;
+  margin: 0px 2px;
+  transition: 0.3s;
 }
 
 .playback-speed-dropdown div svg {
@@ -117,11 +114,13 @@
 }
 
 .playback-speed-dropdown div:hover {
-  background-color: #ffffff62;
+  background-color: #3d63dd;
+  color: white;
 }
 
 .playback-speed-dropdown .active {
-  background-color: #ffffff62;
+  background-color: #3d63dd;
+  color: white;
 }
 
 .player.captions button.caption-btn svg {
@@ -132,29 +131,4 @@
 .cutom-controls-area {
   display: flex;
   align-items: center;
-}
-
-@media (max-width: 800px) {
-  .playback-speed-dropdown {
-    height: 250px;
-    top: 2px;
-    overflow: scroll;
-    left: -100px;
-  }
-
-  .playback-speed-dropdown {
-    background-color: #000000d0;
-  }
-  .playback-speed-dropdown .title {
-    background-color: black;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.265);
-  }
-
-  .playback-speed-dropdown .title:hover {
-    background-color: black;
-  }
-
-  .playback-speed .selected {
-    font-size: 12px;
-  }
 }

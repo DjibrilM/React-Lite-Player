@@ -24,11 +24,13 @@
 }
 
 .player-progress-bar-container input::-webkit-slider-thumb {
+  appearance: none;
   -webkit-appearance: none;
   width: 12px;
   height: 12px;
   visibility: hidden;
-  background-color: none;
+  background-color: white;
+  opacity: 0;
 }
 
 .player-progress-bar-container input[type="range"]::-moz-range-thumb {
@@ -50,12 +52,22 @@
 }
 
 .custom-thumb {
-  width: 10px;
-  height: 10px;
+  width: 7px;
+  height: 7px;
   background-color: white;
   border-radius: 100px;
   position: relative;
   right: -1px;
+  padding: 2px;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.custom-thumb div {
+  width: 100%;
+  height: 100%;
+  background-color: #3d63dd;
+  border-radius: 100%;
 }
 
 .player-progress-bar-container:hover,
@@ -69,4 +81,12 @@
   background-color: rgba(233, 230, 230, 0.237);
   position: absolute;
   z-index: 1;
+}
+
+.player-progress-bar-container:hover .custom-thumb {
+  opacity: 1;
+}
+
+.player.paused .custom-thumb {
+  opacity: 1;
 }

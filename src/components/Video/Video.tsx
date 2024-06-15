@@ -378,7 +378,9 @@ const Video = forwardRef<ForwardedRef, VideoProps>(
               <div
                 style={{ background: videoProgressBckground }}
                 className="custom-thumb"
-              ></div>
+              >
+                <div className=""></div>
+              </div>
             </div>
             <div
               style={{ background: bufferedIndicatorBackground }}
